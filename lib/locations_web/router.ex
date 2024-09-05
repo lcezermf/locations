@@ -18,6 +18,7 @@ defmodule LocationsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/maps", MapLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
