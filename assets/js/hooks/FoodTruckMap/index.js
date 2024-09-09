@@ -1,6 +1,9 @@
+import RestaurantLeaflet from "./restaurant_leaf_let"
+
 const FoodTruckMap = {
     mounted() {
-        console.log("Hello")
+        selectPoint = JSON.parse(this.el.dataset.selectPoint)
+        this.map = new RestaurantLeaflet(this.el, [selectPoint.latitude, selectPoint.longitude])
     }
 }
 

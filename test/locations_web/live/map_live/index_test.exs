@@ -31,7 +31,7 @@ defmodule LocationsWeb.MapLive.IndexTest do
       owner_name: "owner #{1}",
       latitude: 100.0,
       longitude: 200.00,
-      status: Enum.shuffle([:active, :inactive]) |> Enum.shuffle() |> hd()
+      status: Enum.shuffle(["active", "inactive"]) |> Enum.shuffle() |> hd()
     }
     |> FoodTruck.changeset()
     |> Repo.insert()

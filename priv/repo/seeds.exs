@@ -13,7 +13,7 @@ alias Locations.Repo
 alias Locations.FoodTruck
 
 get_status = fn ->
-  Enum.shuffle([:active, :inactive]) |> Enum.shuffle() |> hd()
+  Enum.shuffle(["active", "inactive"]) |> Enum.shuffle() |> hd()
 end
 
 for i <- 1..50 do

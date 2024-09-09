@@ -1,4 +1,6 @@
 defmodule Locations do
+  import Ecto.Query
+
   alias Phoenix.PubSub
   alias Locations.FoodTruck
   alias Locations.Repo
@@ -10,6 +12,12 @@ defmodule Locations do
     |> FoodTruck.changeset()
     |> Repo.insert()
     |> broadcast()
+  end
+
+  def list_food_trucks do
+    FoodTruck
+    |> order_by([ft], asc: ft.id)
+    |> Repo.all()
   end
 
   defp broadcast({:ok, food_truck} = result) do
