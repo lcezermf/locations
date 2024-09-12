@@ -16,16 +16,38 @@ get_status = fn ->
   Enum.shuffle(["active", "inactive"]) |> Enum.shuffle() |> hd()
 end
 
-for i <- 1..50 do
-  %{
-    address: "Address #{i}",
-    description: "description #{1}",
-    details: "details #{1}",
-    owner_name: "owner #{1}",
-    latitude: 100.0,
-    longitude: 200.00,
-    status: get_status.()
-  }
-  |> FoodTruck.changeset()
-  |> Repo.insert()
-end
+%{
+  address: "Home Design",
+  description: "Home Design",
+  details: "Home Design #{1}",
+  owner_name: "owner",
+  latitude: -27.5837356,
+  longitude: -48.505113,
+  status: get_status.()
+}
+|> FoodTruck.changeset()
+|> Repo.insert()
+
+%{
+  address: "Dom floripa",
+  description: "Dom floripa",
+  details: "Dom floripa",
+  owner_name: "owner",
+  latitude: -27.590994,
+  longitude: -48.5141058,
+  status: get_status.()
+}
+|> FoodTruck.changeset()
+|> Repo.insert()
+
+%{
+  address: "Keko",
+  description: "Keko",
+  details: "Keko",
+  owner_name: "owner",
+  latitude: -27.5957852,
+  longitude: -48.552787,
+  status: get_status.()
+}
+|> FoodTruck.changeset()
+|> Repo.insert()

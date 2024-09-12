@@ -1,10 +1,12 @@
 <h1>Foodtrucks</h1>
 <div class="food-truck-container">
-  <ul>
-    <li><a href="">FoodTruck.owner_name</a></li>
-  </ul>
-
   <div id="wrapper">
-    <div id="map" phx-hook="FoodTruckMap" data-select-point={Jason.encode!(@food_truck)}></div>
+    <div
+      id="map"
+      phx-hook="FoodTruckMap"
+      data-select-point={Jason.encode!(hd(@food_trucks))}
+      data-food-trucks={Jason.encode!(@food_trucks)}
+    >
+    </div>
   </div>
 </div>
