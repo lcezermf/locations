@@ -8,6 +8,8 @@ class RestaurantLeaflet {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(this.map);
+
+        this.markerClickedCallback = markerClickedCallback
     }
 
     addMarker(foodTruck) {
@@ -21,6 +23,11 @@ class RestaurantLeaflet {
                 
                 `
             )
+
+        marker.on('click', e => {
+            marker.openPopup()
+            this.markerClickedCallback(e)
+        })
 
         return marker
     }

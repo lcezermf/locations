@@ -4,8 +4,12 @@ defmodule LocationsWeb.MapLive.Index do
   alias Locations
 
   def mount(_, _, socket) do
-    food_trucks = Locations.list_food_trucks()
+    {:ok, assign(socket, :food_trucks, Locations.list_food_trucks())}
+  end
 
-    {:ok, assign(socket, :food_trucks, food_trucks)}
+  def handle_event("load-food-trucks", _, socket) do
+    # :reply "notify" the actor who triggers the event
+
+    {:reply, %{food_trucks: Locations.list_food_trucks()}, socket}
   end
 end

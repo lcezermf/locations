@@ -16,7 +16,7 @@ defmodule LocationsWeb.MapLive.IndexTest do
 
     view
     |> element("#map")
-    |> render_hook("LoadFoodTrucks", [])
+    |> render_hook("load-food-trucks", [])
 
     assert has_element?(view, "#map")
   end
