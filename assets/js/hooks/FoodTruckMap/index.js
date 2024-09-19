@@ -12,6 +12,10 @@ const FoodTruckMap = {
             reply.food_trucks.forEach(foodTruck => {
                 this.map.addMarker(foodTruck)
             })
+        });
+
+        this.handleEvent("highlight_marker", foodTruck => {
+            this.map.highlightMarker(foodTruck)
         })
     }
 }

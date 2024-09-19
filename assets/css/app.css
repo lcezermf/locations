@@ -5,5 +5,15 @@
 /* This file is for your main application CSS */
 #map {
     height: 90vh;
-    width: 90vw;
+    width: 80vw;
+}
+
+.food-truck-container {
+    display: inline-flex;
+    padding: 16px;
+}
+
+.list {
+    overflow-y: scroll;
+    height: 70vh;
 }

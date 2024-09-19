@@ -20,7 +20,7 @@ end
   address: "Home Design",
   description: "Home Design",
   details: "Home Design #{1}",
-  owner_name: "owner",
+  owner_name: "Home Design #{1}",
   latitude: -27.5837356,
   longitude: -48.505113,
   status: get_status.()
@@ -32,7 +32,7 @@ end
   address: "Dom floripa",
   description: "Dom floripa",
   details: "Dom floripa",
-  owner_name: "owner",
+  owner_name: "Dom floripa",
   latitude: -27.590994,
   longitude: -48.5141058,
   status: get_status.()
@@ -44,7 +44,7 @@ end
   address: "Keko",
   description: "Keko",
   details: "Keko",
-  owner_name: "owner",
+  owner_name: "Keko owner",
   latitude: -27.5957852,
   longitude: -48.552787,
   status: get_status.()

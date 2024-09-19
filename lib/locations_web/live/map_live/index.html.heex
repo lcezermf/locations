@@ -1,5 +1,17 @@
 <h1>Foodtrucks</h1>
 <div class="food-truck-container">
+  <div class="list">
+    <button
+      :for={food_truck <- @food_trucks}
+      type="button"
+      href="#"
+      class={"inline-block border-b my-2 #{if !is_nil(@selected_food_truck) && @selected_food_truck.id == food_truck.id, do: "font-bold"}"}
+      phx-click="select_food_truck"
+      phx-value-id={food_truck.id}
+    >
+      <%= food_truck.owner_name %>
+    </button>
+  </div>
   <div id="wrapper">
     <div id="map" phx-hook="FoodTruckMap" data-select-point={Jason.encode!(hd(@food_trucks))}>
     </div>

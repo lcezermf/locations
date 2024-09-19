@@ -1,4 +1,4 @@
-import L from "leaflet"
+import L, { marker } from "leaflet"
 
 class RestaurantLeaflet {
     constructor(element, positions, markerClickedCallback) {
@@ -30,6 +30,28 @@ class RestaurantLeaflet {
         })
 
         return marker
+    }
+
+    highlightMarker(foodTruck) {
+        const marker = this.markerFoodTruck(foodTruck)
+        marker.openPopup()
+        this.map.panTo(marker.getLatLng());
+    }
+
+    markerFoodTruck(foodTruck) {
+        let markerLayer;
+
+        this.map.eachLayer(layer => {
+            if (layer instanceof L.Marker) {
+                const position = layer.getLatLng();
+
+                if (position.lat === foodTruck.latitude && position.lng === foodTruck.longitude) {
+                    markerLayer = layer
+                }
+            }
+
+        });
+        return markerLayer;
     }
 }
 
