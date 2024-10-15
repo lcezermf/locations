@@ -28,4 +28,10 @@ defmodule LocationsWeb.MapLive.Index do
 
     {:noreply, socket}
   end
+
+  def handle_event("marker-clicked", id, socket) do
+    food_truck = Enum.find(socket.assigns.food_trucks, &(&1.id == id))
+
+    {:reply, %{food_truck: food_truck}, assign(socket, :selected_food_truck, food_truck)}
+  end
 end

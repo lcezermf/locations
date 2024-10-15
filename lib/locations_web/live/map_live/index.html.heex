@@ -13,7 +13,12 @@
     </button>
   </div>
   <div id="wrapper">
-    <div id="map" phx-hook="FoodTruckMap" data-select-point={Jason.encode!(hd(@food_trucks))}>
+    <div
+      id="map"
+      phx-update="ignore"
+      phx-hook="FoodTruckMap"
+      data-select-point={Jason.encode!(hd(@food_trucks))}
+    >
     </div>
   </div>
 </div>

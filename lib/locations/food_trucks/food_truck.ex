@@ -3,7 +3,16 @@ defmodule Locations.FoodTruck do
   import Ecto.Changeset
 
   @derive {Jason.Encoder,
-           only: [:address, :description, :details, :latitude, :longitude, :owner_name, :status]}
+           only: [
+             :id,
+             :address,
+             :description,
+             :details,
+             :latitude,
+             :longitude,
+             :owner_name,
+             :status
+           ]}
 
   schema "food_trucks" do
     field :address, :string
